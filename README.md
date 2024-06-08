@@ -1,1 +1,1 @@
-https//quadrantbs.github.io/ResumeQuadrantBS
+https://quadrantbs.github.io/ResumeQuadrantBS
