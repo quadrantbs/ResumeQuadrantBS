@@ -12,6 +12,9 @@ body {
   color: #2c3e50;
   padding: 2rem;
   margin: 20px;
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 
 .container {
@@ -30,10 +33,14 @@ body {
   border-bottom: 2px solid #2980b9;
   cursor: pointer;
   width: 100%;
-  text-align: left;
+  text-align: center;
   outline: none;
   font-size: 20px;
-  
+  animation: fadeInAnimation ease 4s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  border-radius: 10px;
+
 }
 
 .active, .collapsible:hover {
@@ -46,6 +53,8 @@ body {
   transition: max-height 0.2s ease-out;
   overflow: hidden;
   background-color: #f0f9eb;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 
 .collapsible:after {
@@ -53,14 +62,16 @@ body {
   color: black;
   float: right;
   margin-left: 5px;
+  content: "\25BC";
 }
 
 .active:after {
-  content: "\25BC";
+  content: "\25BD";
 }
 
 header {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 header img {
@@ -70,13 +81,12 @@ header img {
 
 header h1 {
   font-size: 3rem;
-  margin-bottom: 0.5rem;
   color: #34495e;
 }
 
 header p {
   font-size: 1.5rem;
-  color: #7f8c8d; /* Light gray subheading */
+  color: #7f8c8d;
 }
 
 main {
@@ -88,7 +98,7 @@ main {
 
 aside {
   flex: 1 1 200px;
-  background-color: #e8f6f3; /* Light blue-green background for aside */
+  background-color: #e8f6f3;
   padding: 1rem;
   border-radius: 5px;
 }
@@ -100,7 +110,6 @@ section {
 ul {
   list-style: none;
   padding-left: 0;
-  margin-bottom: 0.5rem;
 }
 
 ul li ul li, #points {
@@ -120,11 +129,55 @@ h2 {
 }
 
 p {
-  margin-bottom: 0.5rem;
+  
 }
 
 a {
   color: #3498db; /* Blue link color */
+}
+
+#loading {
+  position:fixed;
+  inset: 0;
+  background-color: #34495e;
+  z-index: 2;
+  opacity: 1;
+  transition: opacity 500ms ease;
+}
+
+#loading::after
+{
+  content: "";
+  position: absolute;
+  inset: 40%;
+  width: 10%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 10px solid white;
+  border-top-color: #000;
+  animation: spinner 1s linear infinite;
+}
+
+@keyframes spinner
+{
+  from
+  {
+    transform: rotateZ(0deg);
+  }
+  to
+  {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
 }
 
 @media screen and (max-width: 600px) {
