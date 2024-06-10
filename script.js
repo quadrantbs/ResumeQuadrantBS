@@ -20,4 +20,4 @@ setTimeout(function(){
   setTimeout(function(){
     loading.style.display= "none";
   }, 750);
-}, 250);
+}, 500);
