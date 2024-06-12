@@ -36,7 +36,6 @@ body {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   border-radius: 10px;
-  position: ;
 }
 
 .active, .collapsible:hover {
